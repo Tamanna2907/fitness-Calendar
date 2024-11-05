@@ -1,0 +1,48 @@
+
+.applogo img {
+  height: 40px;
+  width: 40px;
+}
+
+.navbar-expand-md .navbar-collapse{
+  justify-content: center;
+}
+
+.secondBar{
+  display: none;
+}
+
+.signatureBg{
+  background-color: pink;
+}
+
+.content{
+  height: 350px;
+  text-align: center;
+}
+
+.h_170{
+  height:170px;
+}
+
+.row{
+  justify-content: center;
+}
+
+@media screen and (max-width: 756px) {
+  .topBar{
+    display: none;
+  }
+
+  .secondBar{
+    display: block;
+  }
+}
+
+.nav-link{
+  font-size: large;
+}
+
+.active{
+  font-size: larger;
+}

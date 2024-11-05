@@ -1,0 +1,13 @@
+
+
+.mainContainer{
+    box-sizing: border-box;
+    border-radius: 10px;
+    background-image: linear-gradient(pink,pink,white,pink) ;
+    color: white;
+    box-shadow: 10px 10px 10px rgb(196, 174, 178);
+}
+
+.boxShadow{
+    box-shadow: 10px 10px 10px rgb(196, 174, 178);
+}
