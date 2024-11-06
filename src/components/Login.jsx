@@ -21,7 +21,7 @@ function Login(){
         e.preventDefault();
 
 
-        axios.post('/loginForm', {
+        axios.post('/api/loginForm', {
             email:email,
             password:password
         })
