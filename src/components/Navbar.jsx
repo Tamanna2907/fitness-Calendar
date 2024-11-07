@@ -9,11 +9,11 @@ function Navbar() {
         <>
 
         <div className='mt-1 p-2 text-center text-bold topBar'>
-        <a className="applogo" href="#"><img src={logo} alt="Logo" /></a>
+        <a className="applogo" href="/"><img src={logo} alt="Logo" /></a>
         </div>
             <nav className="navbar navbar-dark navbar-expand-md signatureBg">
                 <div className="container-fluid">
-                    <a className="navbar-brand applogo secondBar" href="#"><img src={logo} alt="Logo" /></a>
+                    <a className="navbar-brand applogo secondBar" href="/"><img src={logo} alt="Logo" /></a>
                     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                         <span className="navbar-toggler-icon" />
                     </button>

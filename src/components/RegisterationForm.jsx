@@ -1,10 +1,14 @@
 import React from "react";
 import "../css/registerationForm.css";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import axios from './axios';
 
 
+
 function RegisterationForm(){
+
+const navigate = useNavigate()
 
 const [user , setUser] =useState({
     username:"",
@@ -27,21 +31,6 @@ const handleInput=(e)=>{
 const handleSubmit= async (e)=>{
     e.preventDefault();
 
-    console.log(user)
-    // try{
-    //     const response=await fetch(`http://localhost:4000/registration`,{
-    //         method:'POST',
-    //         headers:{
-    //             'Content-Type':'application/json'
-    //         },
-    //         body: JSON.stringify(user)
-    //     })
-
-    // } catch(error){
-    //     console.log(error)
-    // }
-
-
     axios.post('/registration', {
         username:user.username,
         email:user.email,
@@ -51,7 +40,7 @@ const handleSubmit= async (e)=>{
     })
       .then(function (response) {
         alert("registration successful")
-        console.log(response);
+        navigate('/cycleInfoForm')
       })
       .catch(function (error) {
         alert("some error occured")

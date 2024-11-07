@@ -8,6 +8,7 @@ import Chart from './components/Chart';
 import Home from './components/Home';
 import RegistrationForm from './components/RegisterationForm';
 import Login from './components/Login';
+import CycleInfoForm from './components/CycleInfoForm';
 
 
 function App() {
@@ -23,6 +24,7 @@ function App() {
           <Route path="/Chart" element={<Chart />}></Route>
           <Route path="/RegistrationForm" element={<RegistrationForm />}></Route>
           <Route path="/Login" element={<Login />}></Route>
+          <Route path="/cycleInfoForm" element={<CycleInfoForm />} />
         </Route>
         
       </Routes>

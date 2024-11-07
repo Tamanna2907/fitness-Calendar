@@ -1,7 +1,7 @@
 import React from "react";
 import "../css/registerationForm.css";
 import { useState } from "react";
-import axios from "axios";
+import axios from "./axios";
 
 function Login(){
 
