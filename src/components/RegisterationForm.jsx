@@ -27,21 +27,6 @@ const handleInput=(e)=>{
 const handleSubmit= async (e)=>{
     e.preventDefault();
 
-    console.log(user)
-    // try{
-    //     const response=await fetch(`http://localhost:4000/registration`,{
-    //         method:'POST',
-    //         headers:{
-    //             'Content-Type':'application/json'
-    //         },
-    //         body: JSON.stringify(user)
-    //     })
-
-    // } catch(error){
-    //     console.log(error)
-    // }
-
-
     axios.post('/registration', {
         username:user.username,
         email:user.email,
