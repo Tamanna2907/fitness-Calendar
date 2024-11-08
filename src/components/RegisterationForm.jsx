@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 import axios from './axios';
 import {showToast} from './ToastifyContainer';
 
+
 function RegisterationForm(){
 
 const navigate = useNavigate()
@@ -49,7 +50,12 @@ const handleSubmit= async (e)=>{
 }
 
 const handleClick = () => {
-    showToast.success('This is a success toast!');
+    try {
+        showToast.success('This is a success toast!');
+        
+    } catch (error) {
+        console.log(error)
+    }
   };
     return(
         <>

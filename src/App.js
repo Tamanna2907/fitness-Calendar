@@ -9,10 +9,13 @@ import Home from './components/Home';
 import RegistrationForm from './components/RegisterationForm';
 import Login from './components/Login';
 import CycleInfoForm from './components/CycleInfoForm';
-
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
   return (
+    <div>
+      <ToastContainer />
     <BrowserRouter>
 
       <Routes>
@@ -29,7 +32,7 @@ function App() {
         
       </Routes>
     </BrowserRouter>
-    
+    </div>
   );
 }
 
