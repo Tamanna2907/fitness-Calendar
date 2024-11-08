@@ -3,8 +3,7 @@ import "../css/registerationForm.css";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from './axios';
-
-
+import {showToast} from './ToastifyContainer';
 
 function RegisterationForm(){
 
@@ -39,15 +38,19 @@ const handleSubmit= async (e)=>{
 
     })
       .then(function (response) {
-        alert("registration successful")
+        
+        showToast.success('registration successful')
         navigate('/cycleInfoForm')
       })
       .catch(function (error) {
-        alert("some error occured")
+        showToast.error('registration was not successful')
         console.log(error);
       });
 }
 
+const handleClick = () => {
+    showToast.success('This is a success toast!');
+  };
     return(
         <>
         <section>
@@ -69,6 +72,10 @@ const handleSubmit= async (e)=>{
                 </div>
             </div>
             </div>
+            <div>
+      
+      <button onClick={handleClick}>Show Toast</button>
+    </div>
         </section>
         </>
     )
