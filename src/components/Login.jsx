@@ -2,6 +2,7 @@ import React from "react";
 import "../css/registerationForm.css";
 import { useState } from "react";
 import axios from "./axios";
+import {showToast} from './ToastifyContainer';
 
 function Login(){
 
@@ -27,11 +28,11 @@ function Login(){
         })
 
         .then(function (response){
-            alert("login successful")
+            showToast.success('Login Successful')
         })
         .catch(function(error){
             console.log(error)
-            alert("some error occurred")
+            showToast.error('Login was not successful')
         })
     }
 
