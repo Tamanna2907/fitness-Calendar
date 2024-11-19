@@ -13,7 +13,7 @@ function Dashboard(){
         <>
         <div className='container signatureBg mt-3 rounded text-white'>
             <div className='content'>
-                <h1 className='pt-3'>YOUR PERSONAL PERIOD TRACKER</h1>
+                <h1 className='pt-3'>YOUR PERSONAL FITNESS TRACKER</h1>
 
                 <div className="row mt-5">
                     <div className="col-3 bg-white h_170 m-2 rounded"></div>

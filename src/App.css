@@ -1,3 +1,6 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 .applogo img {
   height: 40px;
@@ -41,7 +44,14 @@
 
 .nav-link{
   font-size: large;
+  color: white;
 }
+
+.nav-link:hover{
+  font-size: large;
+  color: gray;
+}
+
 
 .active{
   font-size: larger;

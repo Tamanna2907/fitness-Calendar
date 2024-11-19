@@ -49,20 +49,13 @@ const handleSubmit= async (e)=>{
       });
 }
 
-const handleClick = () => {
-    try {
-        showToast.success('This is a success toast!');
-        
-    } catch (error) {
-        console.log(error)
-    }
-  };
+
     return(
         <>
         <section>
             <div className="row">
             <div className="container mainContainer m-5 text-center col-sm-4 offset-sm-4">
-                <h3 className="pt-2">Register Yourself</h3>
+                <h3 className="pt-2 ">Register Yourself</h3>
                 <div className="secondContainer p-3 ">
                     <form onSubmit={handleSubmit}>
                     <input type="text" className="username form-control mt-3 boxShadow" name="username" id="userName" placeholder="Enter Your Name" value={user.username} onChange={handleInput} />
@@ -80,7 +73,6 @@ const handleClick = () => {
             </div>
             <div>
       
-      <button onClick={handleClick}>Show Toast</button>
     </div>
         </section>
         </>
