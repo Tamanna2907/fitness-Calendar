@@ -41,7 +41,11 @@ const handleSubmit= async (e)=>{
       .then(function (response) {
         
         showToast.success('registration successful')
-        navigate('/cycleInfoForm')
+        navigate('/cycleInfoForm', {
+            state:{
+                userId: response.data.userId
+            }
+        })
       })
       .catch(function (error) {
         showToast.error('registration was not successful')

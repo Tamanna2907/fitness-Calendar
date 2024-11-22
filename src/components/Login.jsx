@@ -3,11 +3,14 @@ import "../css/registerationForm.css";
 import { useState } from "react";
 import axios from "./axios";
 import {showToast} from './ToastifyContainer';
+import { useAuth } from "../store/auth";
 
 function Login(){
 
     const [email, setEmail]=useState("");
     const [password, setPassword]=useState("");
+
+    const {storeTokenInLS} = useAuth();
 
     const handleEmail=(event)=>{
         setEmail(event.target.value);
@@ -27,10 +30,12 @@ function Login(){
             password:password
         })
 
-        .then(function (response){
+        .then(async function (response){
+            let token = response.data.token;
+            storeTokenInLS(token)
             showToast.success('Login Successful')
         })
-        .catch(function(error){
+        .catch(async function(error){
             console.log(error)
             showToast.error('Login was not successful')
         })

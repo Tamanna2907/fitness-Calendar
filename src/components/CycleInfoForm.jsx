@@ -1,16 +1,19 @@
 import React, {useState} from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import axios from './axios';
 
 const CycleInfoForm = () =>{
     const navigate = useNavigate();
+    const location = useLocation();
+    const userId = location.state || {}
 
     const [currentStep, setCurrentStep] = useState(0);
     const [info, setInfo] = useState({
         cycleLength:"",
         periodDuration:"",
         lastPeriodDate:"",
-        cycleRegularity:""
+        cycleRegularity:"",
+        userId:userId
 
     })
 
@@ -49,7 +52,8 @@ const CycleInfoForm = () =>{
         let data = {cycleLength: info.cycleLength,
             periodDuration: info.periodDuration,
             lastPeriodDate: info.lastPeriodDate,
-            cycleRegularity: info.cycleRegularity}
+            cycleRegularity: info.cycleRegularity,
+            userId:userId}
 
         axios.post('/saveCycleInformation',data)
         .then(function(response){
