@@ -1,5 +1,6 @@
 import React, {useState} from "react";
 import { useNavigate, useLocation } from "react-router-dom";
+import {showToast} from './ToastifyContainer';
 import axios from './axios';
 
 const CycleInfoForm = () =>{
@@ -57,12 +58,12 @@ const CycleInfoForm = () =>{
 
         axios.post('/saveCycleInformation',data)
         .then(function(response){
-            alert(response.data)
+            showToast.success(response.data)
             navigate('/')
         })
         .catch(function(error){
             console.log(error)
-            alert(error,"error")
+            showToast.error(error.response.data)
         })
     }
 

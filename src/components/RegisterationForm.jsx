@@ -4,6 +4,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from './axios';
 import {showToast} from './ToastifyContainer';
+import { useAuth } from "../store/auth";
 
 
 function RegisterationForm(){
@@ -16,6 +17,8 @@ const [user , setUser] =useState({
     phone:"",
     password:""
 });
+
+const {storeTokenInLS} = useAuth();
 
 
 const handleInput=(e)=>{
@@ -39,7 +42,8 @@ const handleSubmit= async (e)=>{
 
     })
       .then(function (response) {
-        
+        let token = response.data.token;
+        storeTokenInLS(token)
         showToast.success('registration successful')
         navigate('/cycleInfoForm', {
             state:{
@@ -48,8 +52,7 @@ const handleSubmit= async (e)=>{
         })
       })
       .catch(function (error) {
-        showToast.error('registration was not successful')
-        console.log(error);
+        showToast.error(error.response.data.message)
       });
 }
 

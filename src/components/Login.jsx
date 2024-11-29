@@ -1,6 +1,7 @@
 import React from "react";
 import "../css/registerationForm.css";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import axios from "./axios";
 import {showToast} from './ToastifyContainer';
 import { useAuth } from "../store/auth";
@@ -11,6 +12,12 @@ function Login(){
     const [password, setPassword]=useState("");
 
     const {storeTokenInLS} = useAuth();
+    const navigate = useNavigate();
+    // const {user} = useAuth();
+
+    // if(user){
+    //     console.log(user,"in log in page userrrr")
+    // }
 
     const handleEmail=(event)=>{
         setEmail(event.target.value);
@@ -33,11 +40,12 @@ function Login(){
         .then(async function (response){
             let token = response.data.token;
             storeTokenInLS(token)
+            // const res_data = await response.data;
             showToast.success('Login Successful')
+            navigate('/')
         })
         .catch(async function(error){
-            console.log(error)
-            showToast.error('Login was not successful')
+            showToast.error(error.response.data.message || "Login failed")
         })
     }
 
