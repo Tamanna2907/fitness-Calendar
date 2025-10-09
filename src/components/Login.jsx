@@ -4,6 +4,7 @@ import { useState } from "react";
 import axios from "./axios";
 import {showToast} from './ToastifyContainer';
 import { useAuth } from "../store/auth";
+import { useNavigate } from "react-router-dom";
 
 function Login(){
 
@@ -11,7 +12,7 @@ function Login(){
     const [password, setPassword]=useState("");
 
     const {storeTokenInLS} = useAuth();
-
+    const navigate = useNavigate();
     const handleEmail=(event)=>{
         setEmail(event.target.value);
     }
@@ -25,7 +26,7 @@ function Login(){
         e.preventDefault();
 
 
-        axios.post('/api/loginForm', {
+        axios.post('/auth/login', {
             email:email,
             password:password
         })
@@ -34,10 +35,11 @@ function Login(){
             let token = response.data.token;
             storeTokenInLS(token)
             showToast.success('Login Successful')
+            navigate('/');
         })
         .catch(async function(error){
             console.log(error)
-            showToast.error('Login was not successful')
+            showToast.error(error?.response?.data?.message || 'Login was not successful')
         })
     }
 

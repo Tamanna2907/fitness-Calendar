@@ -3,8 +3,8 @@
 @tailwind utilities;
 
 .applogo img {
-  height: 40px;
-  width: 40px;
+  height: 50px;
+  width: 50px;
 }
 
 .navbar-expand-md .navbar-collapse{
@@ -16,7 +16,7 @@
 }
 
 .signatureBg{
-  background-color: pink;
+  background-color: rgb(236 72 153);
 }
 
 .content{

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import logo from '../images/logo.jpg';
+import logo from '../images/logo.svg';
 import { Menu, X } from 'lucide-react';
 import { NavLink, Outlet } from 'react-router-dom';
 import { useAuth } from '../store/auth';
@@ -39,7 +39,7 @@ const Navbar = () => {
           <NavLink className="nav-link" to={'/Calender'}>Calender</NavLink>
           <NavLink className="nav-link" to={'/Log'}>Log</NavLink>
           <NavLink className="nav-link" to={'/Chart'}>Chart</NavLink>
-          <NavLink className="nav-link" to={'/Notes'}>Notes</NavLink>
+          <NavLink className="nav-link" to={'/Reminders'}>Reminders</NavLink>
           {isLoggedIn ? (
             <NavLink className="nav-link" to={'/Logout'}>Logout</NavLink>
           ): (
@@ -98,7 +98,7 @@ const Navbar = () => {
           <NavLink className="nav-link" to={'/Calender'} onClick={closeMenu}>Calender</NavLink>
           <NavLink className="nav-link" to={'/Log'} onClick={closeMenu}>Log</NavLink>
           <NavLink className="nav-link" to={'/Chart'} onClick={closeMenu}>Chart</NavLink>
-          <NavLink className="nav-link text-white hover:text-gray-300" to={'/Notes'} onClick={closeMenu}>Notes</NavLink>
+          <NavLink className="nav-link text-white hover:text-gray-300" to={'/Reminders'} onClick={closeMenu}>Reminders</NavLink>
           { isLoggedIn? (
             <NavLink className="nav-link" to={'/Logout'} onClick={closeMenu}>Logout</NavLink>
             ):(<>

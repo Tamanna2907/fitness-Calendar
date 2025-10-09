@@ -11,3 +11,8 @@
 .boxShadow{
     box-shadow: 10px 10px 10px rgb(196, 174, 178);
 }
+
+.secondContainer label{
+color: black;
+
+}

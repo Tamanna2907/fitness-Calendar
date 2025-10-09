@@ -3,7 +3,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom"
 import Dashboard from './components/Dashboard';
 import Calender from './components/Calender';
 import Log from './components/Log';
-import Notes from './components/Notes';
+import Reminders from './components/Reminders';
 import Chart from './components/Chart';
 import Home from './components/Home';
 import RegistrationForm from './components/RegisterationForm';
@@ -24,7 +24,7 @@ function App() {
           <Route index element={< Dashboard />}></Route>
           <Route path="/Calender" element={<Calender />}></Route>
           <Route path="/Log" element={<Log />}></Route>
-          <Route path="/Notes" element={<Notes />}></Route>
+          <Route path="/Reminders" element={<Reminders />}></Route>
           <Route path="/Chart" element={<Chart />}></Route>
           <Route path="/RegistrationForm" element={<RegistrationForm />}></Route>
           <Route path="/Login" element={<Login />}></Route>
